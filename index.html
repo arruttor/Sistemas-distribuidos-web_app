@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App</title>
+    <script>
+        async function fetchApi() {
+            const response = await fetch('http://localhost:3000/api');
+            const data = await response.json();
+            document.getElementById('api-response').innerText = data.message;
+        }
+    </script>
+</head>
+<body>
+    <h1>Web Application</h1>
+    <p id="api-response">Waiting for API response...</p>
+    <button onclick="fetchApi()">Fetch API</button>
+</body>
+</html>
